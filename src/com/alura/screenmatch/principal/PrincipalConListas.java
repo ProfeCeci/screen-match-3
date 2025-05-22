@@ -5,6 +5,7 @@ import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -21,11 +22,16 @@ public class PrincipalConListas {
         lista.add(otra);
         lista.add(serie);
 
+        Collections.sort(lista);
+        System.out.println(lista);
+
         for(Titulo item : lista) {
             System.out.println("Nombre: " +item.getNombre());
             if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 2) {
                 System.out.println("Clasificacion: "  + pelicula.getClasificacion());
             }
         }
+
+
     }
 }
